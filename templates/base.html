@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {{ titulo }}</title>
+
+  <!-- FUENTE: Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font-Awesome -->
+
+  <!-- overlayScrollbars estilos-->
+  <link rel="stylesheet" href="{% static 'lib/AdminLTE-3.2.0/plugins//overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!--  estilos admLite -->
+  <link rel="stylesheet" href="{% static 'lib/AdminLTE-3.2.0/css/adminlte.min.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/datatables/DataTables-1.11.5/css/dataTables.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="{% static 'lib/datatables/Responsive-2.2.9/css/responsive.bootstrap4.min.css' %}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.4/css/select.bootstrap4.min.css">
+  <link href='{% static 'lib/FullCanlendar/lib/main.css' %}' rel='stylesheet' />
+
+
+<!--  -->
+<script src=" {% static 'lib/HighCharts/code/highcharts.js' %}"></script>
+<script src="{% static 'lib/FullCanlendar/lib/main.js' %}"></script>
+<script src=" {% static 'lib/HighCharts/code/modules/exporting.js' %}"></script>
+<script src="{% static 'lib/HighCharts/code/modules/export-data.js' %}"></script>
+<script src="{% static 'lib/HighCharts/code/modules/accessibility.js' %}"></script>
+<script src="https://kit.fontawesome.com/c1e9bd672e.js" crossorigin="anonymous"></script>
+
+ <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
+    </script>
+<!--  -->
+    {% block Links %}
+    
+    {% endblock %}
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<!-- wrapper -->
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- enlaces Nav L-->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- enlaces nav R -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-sm-right dropdown-menu-right">
+          <div class="dropdown-divider"></div>
+          <a href="{% url 'logout' %}" class="dropdown-item dropdown-footer">Cerrar Sesion</a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- [main] contenedor principal -->
+  {% block contenidoLat %}
+  
+  {% endblock %}
+
+  <!-- [Content Wrapper]. contenedor de pagina -->
+  <div class="content-wrapper">
+    <!-- Contenido pagina header -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">xxxxx</a></li>
+              <li class="breadcrumb-item"><a href="#">xxxxx</a></li>
+              <li class="breadcrumb-item active">xxxxx</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- FIN /.container-fluid -->
+    </section>
+
+    <!-- Area de trabajo [contenido principal] -->
+    <section class="content">
+
+      <div class="container-fluid">
+        {% block areaTrabajo %}
+
+        {% endblock %}
+      </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <footer class="main-footer">
+    <div class="float-right d-none d-sm-block">
+    </div>
+    <strong>Copyright <a href="#">GAIA</a>.</strong> All rights reserved.
+  </footer>
+
+  <aside class="control-sidebar control-sidebar-dark">
+
+  </aside>
+</div>
+<!-- ./wrapper -->
+{% block scripts %}
+
+{% endblock %}
+<!-- jQuery -->
+<script src="{% static 'lib/AdminLTE-3.2.0/plugins/jquery/jquery.min.js' %}"></script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'lib/AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'lib/AdminLTE-3.2.0/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- ADM scripts -->
+
+<script src="{% static 'lib/datatables/DataTables-1.11.5/js/jquery.dataTables.js' %}"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="{% static 'lib/datatables/DataTables-1.11.5/js/dataTables.bootstrap4.min.js' %}"></script>
+<script src="{% static 'lib/datatables/Responsive-2.2.9/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'lib/datatables/Responsive-2.2.9/js/responsive.bootstrap4.min.js' %}"></script>
+<script src="https://cdn.datatables.net/select/1.3.4/js/dataTables.select.min.js"></script>
+<script src="{% static 'lib/JS propios/calendario.js' %}"></script>
+<script src="{% static 'lib/AdminLTE-3.2.0/js/adminlte.min.js' %}"></script>
+<script src="{% static 'lib/JS propios/script_1.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-dark elevation-4 ">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link text-center">
+      <span class="brand-text font-weight-bolder">
+        {% block titulonav %}
+        COCINERO
+        {% endblock %}
+      </span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- usuario en side bar-->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'lib/AdminLTE-3.2.0/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+                <a href="#" class="d-block">{{ request.user.first_name }} {{ request.user.last_name }}</a>
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- iconografia agregada-->
+            <li class="nav-header">Principal</li>
+          <li class="nav-item mt-1">
+            <a href="{%  url 'comedor:CocinaProd' %}" class="nav-link">
+              <i class="fa-solid fa-plate-wheat"></i>
+              <p>
+                Produccion Alimentos
+{#                <span class="right badge badge-danger">Nuevo</span>#}
+              </p>
+            </a>
+          </li>
+              <li class="nav-item mt-1">
+            <a href="{%  url 'comedor:CocinaDesp' %}" class="nav-link">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <p>
+                Peso de desperdicios
+{#                <span class="right badge badge-danger">Nuevo</span>#}
+              </p>
+            </a>
+          </li>
+          <li class="nav-header border-top mt-5">Centro de ayuda</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+              <i class="fa-solid fa-headset"></i>
+              <p>Soporte y servicio</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.Fin sideBar-->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

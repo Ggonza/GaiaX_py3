@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block scripts %}
+{% endblock %}
+{% block contenidoLat %}
+    {% include 'CocinaLat.html' %}
+{% endblock %}
+{% block areaTrabajo %}
+    <div class="col-md-12">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="card card-default">
+                <div class="card-header text-center">
+                    <h3>PESAJE DE ALIMENTOS DESPERDICIADOS</h3>
+                </div>
+                <div class="card-body mt-3">
+                    <div class="card-body row">
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <div class="card h-100">
+                                    <!-- Cuerpo tarjeta inputs de menu-->
+                                    <div class="card-body">
+                                        <div class="container-fluid">
+
+                                            <div class="row">
+                                                <!-- modulo de peso solidos-->
+                                                <div class="col-1"></div>
+                                                <div class="card h-100 col-4">
+                                                    <div id="cnt_prod"
+                                                         class="card-header bg-info font-weight-bold text-center">
+                                                        <i class="fa-solid fa-cube"></i>
+                                                        Peso Solidos
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <label>Ingrese peso en Kg:</label>
+                                                                    {{ form.peso_solidos|add_class:'form-control'|attr:'autocomplete:off' }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-1"></div>
+                                                <!--Modulo de peso liquidos-->
+                                                <div class="card h-100 col-4">
+                                                    <div id="cnt_prod"
+                                                         class="card-header bg-warning font-weight-bold text-center">
+                                                        <i class="fa-solid fa-glass-water-droplet"></i>
+                                                        Peso Liquidos
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="container-fluid">
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <label>Ingrese peso en Kg:</label>
+                                                                    {{ form.peso_liquidos|add_class:'form-control'|attr:'autocomplete:off' }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-9"></div>
+                                                <button id="btn_aceptar" class="btn btn-success"
+                                                        value="submit" type="submit"><strong>Aceptar</strong>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Cantidad estimada para uso-->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}

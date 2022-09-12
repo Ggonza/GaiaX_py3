@@ -1,0 +1,117 @@
+{% load static %}
+<aside class="main-sidebar sidebar-light-dark elevation-4 ">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link text-center">
+      <span class="brand-text font-weight-bolder">
+        {% block titulonav %}
+        ADMINISTRADOR
+        {% endblock %}
+      </span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- usuario en side bar-->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{% static 'lib/AdminLTE-3.2.0/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+
+                <a href="#" class="d-block">{{ request.user.first_name }} {{ request.user.last_name }}</a>
+
+        </div>
+      </div>
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- iconografia agregada-->
+            <li class="nav-header">Principal</li>
+          <li class="nav-item mt-1">
+            <a href="{%  url 'comedor:AdmGeneral' %}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Vista rapida
+{#                <span class="right badge badge-danger">Nuevo</span>#}
+              </p>
+            </a>
+          </li>
+            <li class="nav-header border-top mt-2">Gestion Usuarios</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-user-gear"></i>
+              <p>
+                Equipo de Trabajo
+                <i class="fas fa-angle-left right"></i>
+{#                <span class="badge badge-info right"></span>#}
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{% url 'comedor:ListUsu' %}" class="nav-link">
+                  <i class="fa-solid fa-user"></i>
+                  <p>Profesores</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../layout/top-nav-sidebar.html" class="nav-link">
+                  <i class="fa-solid fa-user"></i>
+                  <p>Cocineros</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <p>
+                Estudiantes
+              </p>
+            </a>
+          </li>
+            <li class="nav-header border-top mt-2">Gestion de datos</li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa-solid fa-chart-column"></i>
+              <p>
+                Estadisticas
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="fa-solid fa-dumpster"></i>
+                  <p>Desperdicios</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'comedor:admRepProd' %}" class="nav-link">
+                  <i class="fa-solid fa-utensils"></i>
+                  <p>Produccion</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'comedor:admCrono' %}" class="nav-link">
+              <i class="nav-icon far fa-calendar-alt"></i>
+              <p>
+                Cronograma
+{#                <span class="badge badge-info right">2</span>#}
+              </p>
+            </a>
+          </li>
+          <li class="nav-header border-top mt-5">Centro de ayuda</li>
+          <li class="nav-item">
+            <a href="https://adminlte.io/docs/3.1/" class="nav-link">
+              <i class="fa-solid fa-headset"></i>
+              <p>Soporte y servicio</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.Fin sideBar-->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

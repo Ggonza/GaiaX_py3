@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block contenidoLat %}
+    {% include 'profesorLat.html' %}
+{% endblock %}
+{% block areaTrabajo %}
+    <div class="col-md-12">
+    <form action="#" method="post">
+    {% csrf_token %}
+        <div class="card card-default">
+            <div class="card-header">
+                <h3 class="card-title col-sm-11 row">
+                    <strong class="col-12">
+                        Listado Estudiantes
+                    </strong>
+
+                     <!-- REMOVER ESTA PARTE DEL CODIGO DESPUES ESTO ES SOLO DEMOSTRATIVO-->
+                    <div id="" class="row align-items-center">
+                        <label id="p_text1" for="item1">Cant. Est: </label>
+                        {% render_field form.cantidad_est type="text" class="form-control" placeholder="Ingrese cantidad Estudiantes" id="cont_form" %}
+                        <button type="submit" class="btn btn-info col-4 mt-3">
+                            <strong>
+                                Enviar
+                            </strong>
+                        </button>
+                    </div>
+                </h3>
+            </div>
+            <div class="card-body">
+                <table id="data" class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="width: 5%">Cod. Usuario</th>
+                        <th scope="col"  style="width: 70%">Nombre y apellido</th>
+                        <th scope="col"  style="width: 10%">Asistencia</th>
+                        <th scope="col"  style="width: 15%">curso</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        {% for est in object_list %}
+                            <tr>
+                                <th >{{ est.idestudiante }}</th>
+                                <th >{{ est.nombres }} {{ est.apellidos }}</th>
+                                {% if est.asistencia == 1 %}
+                                    <th >asiste</th>
+                                {% endif %}
+                                {% if est.asistencia == 0 %}
+                                    <th>No asiste</th>
+                                {% endif %}
+                                <th >{{ est.curso_idcurso.no_curso }}</th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+
+    </div>
+{% endblock %}

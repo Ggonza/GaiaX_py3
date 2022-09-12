@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+html, body{
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+/* configuracion lado rojo */
+.lado_rojo{
+  background-color: rgb(254, 114, 114); 
+  height: 100%;
+  text-align: right;
+}
+.lado_blanco {
+  background-color: rgb(226, 226, 226);
+}
+/*FUENTE*/
+#GA{
+  font-size: 6em;
+  color:rgb(226, 226, 226);
+  text-shadow: 0 0 3px darkslategrey, 0 0 5px darkslategray;
+  font-family: 'Fredoka One', cursive;
+}
+#IA{
+  font-size: 6em;
+  color: rgb(254, 114, 114);
+  text-shadow: 0 0 3px darkslategrey, 0 0 5px darkslategray;
+  font-family: 'Fredoka One', cursive;
+}
+
+.columna{
+  height: 100%;
+}
+.cont{
+  height: 95%;
+}
+
+/* semicirlulos */
+.s_circulo{
+  background-color: whitesmoke;
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  margin: -100px 0 0 -100px;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0 0 10px 5px rgba(112, 112, 112, 0.644);
+/* redondear el div L*/
+border-top-left-radius: 100px;
+border-top-right-radius: 100px;
+border-bottom-right-radius: 100px;
+border-bottom-left-radius: 100px;
+}
+
+/* FORMULARIO INICIO SESSION*/
+.cntform{
+  background-color: darkslategrey;
+}
+#formu_id{
+  padding-left: 33%;
+  font-family: 'Bree Serif', serif;
+}
+#ingresaText{
+  font-family: 'Bree Serif', serif;
+  color: rgb(254, 114, 114);
+  text-shadow: 0 0 2px rgb(66, 66, 66), 0 0 2px rgb(66, 66, 66);
+}
+.form-rounded {
+  border-radius: 1rem;
+}
+
+
+/*pie de pagina*/
+
+#pie-pag{
+  background-color: rgb(31, 31, 31);
+  width: 100%;
+  height: 5%;
+  color: white;
+  padding-top: 0.5%;
+}
